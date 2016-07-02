@@ -4,7 +4,7 @@
 #define N 1005
 
 char str1[N], str2[N];
-int a[N][N], b[N][N],count=0;//大数组定义在main()中，占用堆栈造成溢出；定义为全局变量，使用数据段可比较大。
+int a[N][N], b[N][N],count;//大数组定义在main()中，占用堆栈造成溢出；定义为全局变量，使用数据段可比较大。
 char lcs[N];
 
 void Lcs(int m, int n);
@@ -17,8 +17,13 @@ int main(void)
 	/*memset(a, 0, sizeof(a));
 	memset(b, 0, sizeof(b));*/
 	len1 = strlen(str1);
-	len2 = strlen(str2);
+	len2 = strlen(str2);//两组字符串初始化，并获得字符串长度。
 
+	/*
+	对两足字符串进行比对，使用两个临时数组a，b。其中a代表两组字符串中，
+	每个字母在遍历另一个字符串之前已匹配的公共字符序列的数量；b代表，a
+	中所获得公共字符序列数，从何而来。
+	*/
 	for ( i = 1; i <= len1; i++)
 	{
 		for (j = 1; j <= len2; j++)
@@ -43,6 +48,9 @@ int main(void)
 			}
 		}
 	}
+	/*
+	Lcs函数，从最后一位字符的状态倒推，获得最大公共子序列。
+	*/
 	Lcs(len1, len2);
 	lcs[count] = '\0';
 	if (count == 0)
