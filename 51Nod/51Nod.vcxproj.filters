@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1006.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="1005.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="1008.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="1006.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="1005.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
