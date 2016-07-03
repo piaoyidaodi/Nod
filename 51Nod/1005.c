@@ -100,18 +100,18 @@ int minus_spl(char *a, char *b, char *c, int count_a, int count_b)
 	{
 		while (count != 0)
 		{
-			tmp = int(*p) - int(*q);
+			tmp = (int)(*p) - (int)(*q);
 			if (tmp < flag)
 			{
 				tmp = (tmp + 48) + 10 - flag;
-				*r = char(tmp);
+				*r = (char)tmp;
 				r++;
 				flag = 1;
 			}
 			else
 			{
 				tmp = (tmp + 48) - flag;
-				*r = char(tmp);
+				*r = (char)tmp;
 				r++;
 				flag = 0;
 			}
@@ -124,18 +124,18 @@ int minus_spl(char *a, char *b, char *c, int count_a, int count_b)
 		{
 			while (flag == 1 && p != (a + 1))
 			{
-				tmp = int(*p);
+				tmp = (int)(*p);
 				if (tmp - 48 == 0)
 				{
 					tmp = tmp + 10 - flag;
-					*r = char(tmp);
+					*r = (char)tmp;
 					r++;
 					flag = 1;
 				}
 				else
 				{
 					tmp = tmp - flag;
-					*r = char(tmp);
+					*r = (char)tmp;
 					r++;
 					flag = 0;
 				}
@@ -150,7 +150,7 @@ int minus_spl(char *a, char *b, char *c, int count_a, int count_b)
 				}
 				else
 				{
-					*r = char(int(a[0]) - 1);
+					*r = (char)((int)(a[0]) - 1);
 					*(r++) = '-';
 					*r = '\0';
 				}
@@ -171,18 +171,18 @@ int minus_spl(char *a, char *b, char *c, int count_a, int count_b)
 	{
 		while (count != 0)
 		{
-			tmp = int(*q) - int(*p);
+			tmp = (int)(*q) - (int)(*p);
 			if (*q - flag < *p)
 			{
 				tmp += 48 + 10 - flag;
-				*r = char(tmp);
+				*r = (char)(tmp);
 				r++;
 				flag = 1;
 			}
 			else
 			{
 				tmp = tmp + 48 - flag;
-				*r = char(tmp);
+				*r = (char)(tmp);
 				r++;
 				flag = 0;
 			}
@@ -195,18 +195,18 @@ int minus_spl(char *a, char *b, char *c, int count_a, int count_b)
 		{
 			while (flag == 1 && q != b + 1)
 			{
-				tmp = int(*q);
+				tmp = (int)(*q);
 				if (tmp == 48)
 				{
 					tmp = tmp + 10 - flag;
-					*r = char(tmp);
+					*r = (char)(tmp);
 					r++;
 					flag = 1;
 				}
 				else
 				{
 					tmp = tmp - flag;
-					*r = char(tmp);
+					*r = (char)(tmp);
 					r++;
 					flag = 0;
 				}
@@ -221,7 +221,7 @@ int minus_spl(char *a, char *b, char *c, int count_a, int count_b)
 				}
 				else
 				{
-					*r = char(int(b[0]) - 1);
+					*r = (char)((int)(b[0]) - 1);
 					*(r++) = '-';
 					*r = '\0';
 				}
@@ -254,18 +254,18 @@ int plus(char *a, char *b, char *c, int count_a, int count_b)
 	count = (count_a <= count_b) ? count_a : count_b;
 	while (count != 0)
 	{
-		tmp = (int(*p) - 48) + (int(*q) - 48) + flag;
+		tmp = ((int)(*p) - 48) + ((int)(*q) - 48) + flag;
 		if (tmp >= 10)
 		{
 			tmp = tmp % 10 + 48;
-			*r = char(tmp);
+			*r = (char)tmp;
 			r++;
 			flag = 1;
 		}
 		else
 		{
 			tmp = tmp + 48;
-			*r = char(tmp);
+			*r = (char)tmp;
 			r++;
 			flag = 0;
 		}
@@ -321,18 +321,18 @@ int plus(char *a, char *b, char *c, int count_a, int count_b)
 	{
 		while (flag == 1 && p != a)
 		{
-			tmp = int(*p) - 48 + flag;
+			tmp = (int)(*p) - 48 + flag;
 			if (tmp >= 10)
 			{
 				tmp = tmp % 10 + 48;
-				*r = char(tmp);
+				*r = (char)tmp;
 				r++;
 				flag = 1;
 			}
 			else
 			{
 				tmp = tmp + 48;
-				*r = char(tmp);
+				*r = (char)tmp;
 				r++;
 				flag = 0;
 			}
@@ -340,7 +340,7 @@ int plus(char *a, char *b, char *c, int count_a, int count_b)
 		}
 		if (p == a && flag == 1)
 		{
-			if (int(*p)-48+flag==10)
+			if ((int)(*p)-48+flag==10)
 			{
 				*(r++) = '0';
 				*(r++) = '1';
@@ -348,7 +348,7 @@ int plus(char *a, char *b, char *c, int count_a, int count_b)
 			}
 			else
 			{
-				*r = char(int(*p) + 1);
+				*r = (char)((int)(*p) + 1);
 				r++;
 				*r = '\0';
 			}
@@ -378,18 +378,18 @@ int plus(char *a, char *b, char *c, int count_a, int count_b)
 	{
 		while (flag == 1 && q != b)
 		{
-			tmp = int(*q) - 48 + flag;
+			tmp = (int)(*q) - 48 + flag;
 			if (tmp >= 10)
 			{
 				tmp = tmp % 10 + 48;
-				*r = char(tmp);
+				*r = (char)tmp;
 				r++;
 				flag = 1;
 			}
 			else
 			{
 				tmp = tmp + 48;
-				*r = char(tmp);
+				*r = (char)tmp;
 				r++;
 				flag = 0;
 			}
@@ -397,7 +397,7 @@ int plus(char *a, char *b, char *c, int count_a, int count_b)
 		}
 		if (q == b && flag == 1)
 		{
-			*r = char(int(*q) + 1);
+			*r = (char)((int)(*q) + 1);
 			r++;
 			*r = '\0';
 		}
@@ -481,18 +481,18 @@ int minus_equ(char *a, char *b, char *c, int count)
 	counter = count;
 	while (counter != 0)
 	{
-		tmp = int(*p) - int(*q);
+		tmp = (int)(*p) - (int)(*q);
 		if (tmp < flag)
 		{
 			tmp = (tmp + 48) + 10 - flag;
-			*r = char(tmp);
+			*r = (char)tmp;
 			r++;
 			flag = 1;
 		}
 		else
 		{
 			tmp = (tmp + 48) - flag;
-			*r = char(tmp);
+			*r = (char)tmp;
 			r++;
 			flag = 0;
 		}
@@ -563,18 +563,18 @@ int minus_nml(char *a, char *b, char *c, int count_a, int count_b)
 	{
 		while (count != 0)
 		{
-			tmp = int(*p) - int(*q);
+			tmp = (int)(*p) - (int)(*q);
 			if (tmp < flag)
 			{
 				tmp = (tmp + 48) + 10 - flag;
-				*r = char(tmp);
+				*r = (char)tmp;
 				r++;
 				flag = 1;
 			}
 			else
 			{
 				tmp = (tmp + 48) - flag;
-				*r = char(tmp);
+				*r = (char)tmp;
 				r++;
 				flag = 0;
 			}
@@ -587,18 +587,18 @@ int minus_nml(char *a, char *b, char *c, int count_a, int count_b)
 		{
 			while (flag == 1 && p != a)
 			{
-				tmp = int(*p);
+				tmp = (int)(*p);
 				if (tmp - 48 == 0)
 				{
 					tmp = tmp + 10 - flag;
-					*r = char(tmp);
+					*r = (char)tmp;
 					r++;
 					flag = 1;
 				}
 				else
 				{
 					tmp = tmp - flag;
-					*r = char(tmp);
+					*r = (char)tmp;
 					r++;
 					flag = 0;
 				}
@@ -612,7 +612,7 @@ int minus_nml(char *a, char *b, char *c, int count_a, int count_b)
 				}
 				else
 				{
-					*r = char(int(a[0]) - 1);
+					*r = (char)((int)(a[0]) - 1);
 					r++;
 					*r = '\0';
 				}
@@ -633,18 +633,18 @@ int minus_nml(char *a, char *b, char *c, int count_a, int count_b)
 	{
 		while (count != 0)
 		{
-			tmp = int(*q) - int(*p);
+			tmp = (int)(*q) - (int)(*p);
 			if (*q - flag < *p)
 			{
 				tmp += 48 + 10 - flag;
-				*r = char(tmp);
+				*r = (char)tmp;
 				r++;
 				flag = 1;
 			}
 			else
 			{
 				tmp = tmp + 48 - flag;
-				*r = char(tmp);
+				*r = (char)tmp;
 				r++;
 				flag = 0;
 			}
@@ -657,18 +657,18 @@ int minus_nml(char *a, char *b, char *c, int count_a, int count_b)
 		{
 			while (flag == 1 && q != b)
 			{
-				tmp = int(*q);
+				tmp = (int)(*q);
 				if (tmp == 48)
 				{
 					tmp = tmp + 10 - flag;
-					*r = char(tmp);
+					*r = (char)tmp;
 					r++;
 					flag = 1;
 				}
 				else
 				{
 					tmp = tmp - flag;
-					*r = char(tmp);
+					*r = (char)tmp;
 					r++;
 					flag = 0;
 				}
@@ -704,7 +704,7 @@ int minus_nml(char *a, char *b, char *c, int count_a, int count_b)
 				}
 				else
 				{
-					*r = char(int(b[0]) - 1);
+					*r = (char)((int)(b[0]) - 1);
 					r++;
 					*r = '\0';
 				}
@@ -714,7 +714,7 @@ int minus_nml(char *a, char *b, char *c, int count_a, int count_b)
 		{
 			while (q != b)
 			{
-				*(r++) = char(*q);
+				*(r++) = (char)(*q);
 				q--;
 			}
 			*(r++) = b[0];
