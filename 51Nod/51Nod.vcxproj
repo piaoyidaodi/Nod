@@ -28,6 +28,7 @@
     <ClCompile Include="1008.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="1011.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A1F24157-27EC-43E7-A3CE-270518945B5B}</ProjectGuid>
