@@ -16,12 +16,10 @@ int main(void)
 		scanf("%d", &a[i]);
 	}
 	sort(a, n);
-	for (i = 0; i < n - 1; i++)
+	for (i = 0; i < n; i++)
 	{
-		printf("%d ", a[i]);
+		printf("%d\n", a[i]);
 	}
-	printf("%d\n", a[n-1]);
-
 }
 
 void sort(int* a,int n)
