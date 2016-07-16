@@ -36,5 +36,8 @@
     <ClCompile Include="1018_2.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="1019.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
